@@ -1,0 +1,16 @@
+@keyframes hamburgerBubble {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes navDrop {
+  from {
+  }
+  to {
+    transform: translate(0);
+  }
+}

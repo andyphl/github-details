@@ -1,0 +1,56 @@
+@import "../../scss/mixins";
+@import "../../scss/variables";
+
+.search {
+  @include flex(center, center, column);
+  margin-bottom: 1.5rem;
+  width: 50%;
+
+  @include sm {
+    width: 100%;
+  }
+
+  label {
+    @include flex(center, center);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #555;
+
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+
+    .githubIcon {
+      margin-left: 1rem;
+    }
+  }
+
+  .searchBar {
+    display: inline-flex;
+    width: 100%;
+
+    @include md {
+      width: auto;
+    }
+  }
+
+  input,
+  button {
+    border: none;
+    color: #555;
+
+    padding: 0.5rem 0.75rem;
+    background: $bg-glass;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  input {
+    flex-grow: 1;
+    font-size: 1.25rem;
+    border-radius: 1rem 0 0 1rem;
+  }
+
+  button {
+    border-radius: 0 1rem 1rem 0;
+
+    @include flex(center, center);
+  }
+}

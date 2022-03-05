@@ -1,0 +1,34 @@
+@import "../../scss/mixins";
+@import "../../scss/variables";
+@import "../../scss/animation";
+
+.hamburger {
+  display: none;
+  position: absolute;
+  cursor: pointer;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem;
+  background: transparent;
+  border: none;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: $bg-glass;
+    border-radius: 50%;
+    transform: scale(0);
+  }
+
+  &.active::before {
+    animation: hamburgerBubble 0.5s ease-in-out forwards;
+  }
+
+  @include md {
+    @include flex(center, center);
+  }
+}

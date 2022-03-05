@@ -1,0 +1,36 @@
+@mixin flex(
+  $align-items: false,
+  $justify-content: false,
+  $flex-direction: false,
+  $flex-wrap: false
+) {
+  display: flex;
+
+  @if $align-items {
+    align-items: $align-items;
+  }
+
+  @if $justify-content {
+    justify-content: $justify-content;
+  }
+
+  @if $flex-direction {
+    flex-direction: $flex-direction;
+  }
+
+  @if $flex-wrap {
+    flex-wrap: $flex-wrap;
+  }
+}
+
+@mixin sm {
+  @media screen and (max-width: 375px) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
