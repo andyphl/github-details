@@ -1,0 +1,76 @@
+@import "../../scss/mixins";
+@import "../../scss/variables";
+@import "../../scss/animation";
+
+.nav {
+  @include flex(center, space-between);
+  text-align: center;
+  width: 100%;
+
+  li {
+    flex: 1 0;
+    transform: translateY(-15%);
+    border-radius: 0 0 1rem 1rem;
+    background: $bg-glass;
+
+    &.active .link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &::before {
+        content: "<";
+        transform: translateX(-0.5rem);
+      }
+
+      &::after {
+        content: ">";
+        transform: translateX(0.5rem);
+      }
+    }
+
+    & + li {
+      margin-left: 1rem;
+    }
+
+    & .link {
+      display: block;
+      padding: 1rem 2rem;
+    }
+
+    &:hover {
+      animation: navDrop 0.5s ease-in-out forwards;
+    }
+  }
+
+  @include md {
+    @include flex(false, false, column);
+    display: none;
+    max-width: 50%;
+    border-radius: 2rem;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 4rem;
+    right: 0;
+    overflow: hidden;
+    align-items: stretch;
+    position: absolute;
+    transform: translateX(100%);
+    background: #eee;
+
+    li {
+      flex-basis: auto;
+      transform: translateY(0);
+      border-radius: 0;
+
+      & + li {
+        margin: 0;
+        margin-top: 1px;
+      }
+    }
+
+    &.active {
+      display: flex;
+      transform: translate(0);
+    }
+  }
+}
