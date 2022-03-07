@@ -19,11 +19,6 @@ export const Nav = ({ active }) => {
         </Link>
       </li>
       <li>
-        <Link to="/gists" className={styles.link}>
-          Gists
-        </Link>
-      </li>
-      <li>
         <Link to="/followers" className={styles.link}>
           Followers
         </Link>
