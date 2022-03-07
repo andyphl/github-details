@@ -1,0 +1,21 @@
+@import "../../scss/mixins";
+.repo {
+  @include flex(center, space-between);
+  padding: 0.5rem;
+  border-bottom: 1px solid #000;
+
+  a {
+    padding: 0.5rem;
+    flex-shrink: 0;
+  }
+}
+
+.details {
+  h3 {
+    margin-bottom: 0.5rem;
+  }
+  p > span {
+    font-weight: 700;
+    margin-right: 3px;
+  }
+}
