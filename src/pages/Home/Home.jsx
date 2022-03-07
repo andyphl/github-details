@@ -3,11 +3,11 @@ import { Avatar, Card, Icon } from "../../components";
 
 export const Home = ({ userData }) => {
   return (
-    <Card>
+    <>
       {userData.message === "Not Found" ? (
         <h3>User not found</h3>
       ) : (
-        <>
+        <Card>
           <div className={styles.userInfo}>
             <h3>{userData.login}</h3>
             <Avatar src={userData.avatar_url} className={styles.avatar} />
@@ -46,8 +46,8 @@ export const Home = ({ userData }) => {
               </p>
             </div>
           </div>
-        </>
+        </Card>
       )}
-    </Card>
+    </>
   );
 };

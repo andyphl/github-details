@@ -22,3 +22,12 @@
     transform: translateX(0.5rem);
   }
 }
+
+@keyframes loadingSpin {
+  from {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
