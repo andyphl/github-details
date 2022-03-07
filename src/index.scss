@@ -24,3 +24,8 @@ a {
   min-height: 100vh;
   @include flex(center, center, column);
 }
+
+.main-section {
+  width: 100%;
+  word-wrap: break-word;
+}

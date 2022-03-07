@@ -17,6 +17,6 @@
 
 main {
   // for test purpose
-  @include flex(center, center, column, wrap);
+  @include flex(center, center, column);
   padding: 2rem 1rem 3rem;
 }
