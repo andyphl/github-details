@@ -1,0 +1,40 @@
+@import "../../scss/_mixins.scss";
+@import "../../scss/animation";
+
+.userInfo {
+  @include flex(center, center, column);
+
+  h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+
+    .arrow {
+      margin-left: 3px;
+    }
+
+    &:hover .arrow {
+      animation: anchorHover 0.5s ease-in-out forwards;
+    }
+  }
+}
+
+.userDetail {
+  width: 90%;
+  margin: 0 auto;
+
+  p {
+    margin-bottom: 1rem;
+  }
+
+  span {
+    font-weight: 700;
+    margin-right: 3px;
+  }
+}

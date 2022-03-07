@@ -14,3 +14,11 @@
     transform: translate(0);
   }
 }
+
+@keyframes anchorHover {
+  from {
+  }
+  to {
+    transform: translateX(0.5rem);
+  }
+}

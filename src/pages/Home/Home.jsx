@@ -1,22 +1,53 @@
 import styles from "./Home.module.scss";
+import { Avatar, Card, Icon } from "../../components";
 
 export const Home = ({ userData }) => {
   return (
-    <div>
-      <h3>{userData.login}</h3>
-      <div>
-        <img src={userData.avatar_url} alt="github avatar" />
-        <a href={userData.html_url} target="_blank" rel="noreferrer">
-          See user
-        </a>
-        <p>Name: {userData.name}</p>
-        <p>Bio: {userData.bio}</p>
-        <p>Email: {userData.email}</p>
-        <p>Company: {userData.company}</p>
-        <p>Location: {userData.location}</p>
-        <p>Followers: {userData.followers}</p>
-        <p>Create at: {userData.updated_at}</p>
-      </div>
-    </div>
+    <Card>
+      {userData.message === "Not Found" ? (
+        <h3>User not found</h3>
+      ) : (
+        <>
+          <div className={styles.userInfo}>
+            <h3>{userData.login}</h3>
+            <Avatar src={userData.avatar_url} className={styles.avatar} />
+            <a href={userData.html_url} target="_blank" rel="noreferrer">
+              <span>See user</span>
+              <Icon.ArrowRight className={styles.arrow} />
+            </a>
+            <div className={styles.userDetail}>
+              <p>
+                <span>Name: </span>
+                {userData.name}
+              </p>
+              <p>
+                <span>Bio: </span>
+                {userData.bio}
+              </p>
+              <p>
+                <span>Email: </span>
+                {userData.email}
+              </p>
+              <p>
+                <span>Company: </span>
+                {userData.company}
+              </p>
+              <p>
+                <span>Location: </span>
+                {userData.location}
+              </p>
+              <p>
+                <span>Followers: </span>
+                {userData.followers}
+              </p>
+              <p>
+                <span>Create at: </span>
+                {userData.updated_at}
+              </p>
+            </div>
+          </div>
+        </>
+      )}
+    </Card>
   );
 };
