@@ -42,25 +42,25 @@ function App() {
                   path="/repos"
                   exact
                   element={
-                    userData && <Repositories reposUrl={userData.repos_url} />
+                    userData?.repos_url ? (
+                      <Repositories reposUrl={userData.repos_url} />
+                    ) : (
+                      <h3>User not found</h3>
+                    )
                   }
                 />
-                {/* <Route
-                  path="/gists"
-                  exact
-                  element={userData && <Gists gistsUrl={userData.gists_url} />}
-                /> */}
                 <Route
                   path="/followers"
                   exact
                   element={
-                    userData && (
+                    userData?.followers_url ? (
                       <Followers followersUrl={userData.followers_url} />
+                    ) : (
+                      <h3>User not found</h3>
                     )
                   }
                 />
               </Routes>
-              {/* TODO: home, repositories, gists, followers page design */}
             </section>
           </main>
         </Panel>
