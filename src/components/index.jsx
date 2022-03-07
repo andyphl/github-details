@@ -4,4 +4,5 @@ export * from "./Nav/Nav";
 export * from "./SearchForm/SearchForm";
 export * from "./Avatar/Avatar";
 export * from "./Card/Card";
+export * from "./LoadingSpin/LoadingSpin";
 export * from "./Icon";

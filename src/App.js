@@ -1,17 +1,19 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Panel } from "./layouts";
-import { Header, Hamburger, SearchForm } from "./components";
+import { Header, Hamburger, SearchForm, LoadingSpin } from "./components";
 import { Home, Repositories, Followers } from "./pages";
 import { getGithubUser } from "./api/github";
 
 function App() {
   const [userData, setUserData] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
 
   const fetchUserData = async (search) => {
     try {
       const data = await getGithubUser(search);
       setUserData(data);
+      setIsLoading(false);
     } catch (error) {
       setUserData({});
     }
@@ -36,7 +38,13 @@ function App() {
                 <Route
                   path="/"
                   exact
-                  element={userData && <Home userData={userData} />}
+                  element={
+                    userData && isLoading ? (
+                      <LoadingSpin />
+                    ) : (
+                      <Home userData={userData} />
+                    )
+                  }
                 />
                 <Route
                   path="/repos"
