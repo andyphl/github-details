@@ -33,7 +33,7 @@ export const Followers = ({ followersUrl }) => {
                     alt={`${follower.login}'s avatar`}
                   />
                 </div>
-                <a href={follower.url} target="_blank" rel="noreferrer">
+                <a href={follower.html_url} target="_blank" rel="noreferrer">
                   <span>See user</span>
                   <Icon.ArrowRight className={styles.arrow} />
                 </a>
